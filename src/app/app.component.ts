@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NMSCinema';
+
+  loggedUser:any;
+  isAdminLoggedIn():string{
+    return 'N';
+  }
+  
+  isUserLoggedIn():string {
+    return 'N';
+  }
 }

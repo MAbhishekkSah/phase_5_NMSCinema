@@ -1,0 +1,61 @@
+<div class="how-section1" *ngIf="flag == 'N'">
+    <div class="row">
+        <div class="col-md-6 how-img">
+            <img src={{selectedMovie.photo}} class="rounded-circle img-fluid" alt=""/>
+        </div>
+        <div class="col-md-6">
+            <h4><b>{{selectedMovie.name}}</b></h4>
+            <div class="container" style="padding-left: 10%;">
+                <table class="table table-striped table-hover" style="width: 600px; ">
+                    <tbody>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Casts & Crews: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;">{{selectedMovie.casts}}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Directed By: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;">{{selectedMovie.director}}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Languages: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;">{{selectedMovie.language}}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Category: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;">{{selectedMovie.category}}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Show Available: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;">{{selectedMovie.ticketsAvailable}}</td>
+                    </tr>
+                    <tr>
+                        <td style="color:red; font-size: 20px;"><b>Price: </b></td>
+                        <td style="color:rgb(142, 65, 91); font-size: 15px;"><b>{{selectedMovie.price}} /-</b></td>
+                    </tr>
+                    <p style="padding-top:5%; font-size: large; text-align: center;" ><b>Book Your Show Now!</b></p>
+                    <tr><td>
+                        <table class="table table-hover table-striped">
+                            <tbody>
+                                <tr>
+                                    <td><button type="button" class="btn btn-success" style="size: 100px;" (click)="btnClick('11:00 AM')">11:00 AM</button></td>
+                                    <td><button type="button" class="btn btn-success" style="size: 100px;" (click)="btnClick('3:00 PM')">3:00 PM</button></td>
+                                    <td><button type="button" class="btn btn-success" style="size: 100px;" (click)="btnClick('6:00 PM')">6:00 PM</button></td>
+                                    <td><button type="button" class="btn btn-success" style="size: 100px;" (click)="btnClick('9:00 PM')">9:00 PM</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container" *ngIf="flag == 'Y'" style="padding-left: 10%;">
+        <h2><b><span style="text-align: center; color: darkgreen;">Your show has been booked! Below are the details of your show :- </span></b></h2>
+        <div class="container" style="text-align: center; padding-right: 30%;">
+            <p><b><span style="text-align: center; font-size: 30px;">Name of the movie : - &nbsp;&nbsp;{{selectedMovie.name}}</span></b></p>
+            <p><b><span style="text-align: center; font-size: 30px;">Time :- {{showTiming}}</span></b></p>
+            <span style="text-align: center; font-size: 20px;"><button class="btn btn-primary" (click)="goBack()">BACK</button></span>
+        </div>
+    </div>
